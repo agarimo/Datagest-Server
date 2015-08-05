@@ -34,7 +34,7 @@ public class DataGestServer {
         keyStore();
         creaDirectorios();
         cargarConstantes();
-//        con = new Conexion("LocalHost", "localhost", "3306", "admin", "admin");
+        con = new Conexion("LocalHost", "localhost", "3306", "admin", "IkuinenK@@m.s84");
 
         if (testCon()) {
             tray = new TrayGUI();
@@ -89,7 +89,6 @@ public class DataGestServer {
                 }
             }
         } else {
-//            System.out.println("NO HAY EDICTOS PARA DESCARGAR");
             System.out.println(".......INICIANDO ESPERA......");
             if (estado == 0) {
                 limpiarDirectorio(new File("edictos\\sinprocesar\\"));
@@ -102,11 +101,11 @@ public class DataGestServer {
     public static void limpiarDirectorio(File directorio) {
         File[] ficheros = directorio.listFiles();
 
-        for (int i = 0; i < ficheros.length; i++) {
-            if (ficheros[i].isDirectory()) {
-                limpiarDirectorio(ficheros[i]);
+        for (File fichero : ficheros) {
+            if (fichero.isDirectory()) {
+                limpiarDirectorio(fichero);
             }
-            ficheros[i].delete();
+            fichero.delete();
         }
     }
 

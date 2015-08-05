@@ -33,7 +33,10 @@ public class HiloPdf extends Thread {
                 procesoPDF();
                 DataGestServer.estado--;
                 System.out.println("Fin descarga Pdf");
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
+                reinicio();
+                Logger.getLogger(HiloPdf.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 reinicio();
                 Logger.getLogger(HiloPdf.class.getName()).log(Level.SEVERE, null, ex);
             }

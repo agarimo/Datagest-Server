@@ -156,7 +156,7 @@ public class Download {
      * Método que almacena el contenido de un edicto en la BBDD.
      *
      * @param aux edicto a almacenar.
-     * @throws IOException
+     * @return 
      * @throws SQLException
      */
     public boolean almacenaPDF(Edicto aux) throws SQLException {

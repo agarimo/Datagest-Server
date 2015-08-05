@@ -33,7 +33,10 @@ public class HiloHtml extends Thread {
                 procesoHTML();
                 DataGestServer.estado--;
                 System.out.println("Fin descarga HTML");
-            } catch (Exception ex) {
+            } catch (SQLException ex) {
+                reinicio();
+                Logger.getLogger(HiloHtml.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 reinicio();
                 Logger.getLogger(HiloHtml.class.getName()).log(Level.SEVERE, null, ex);
             }

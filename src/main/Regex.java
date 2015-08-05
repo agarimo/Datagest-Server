@@ -20,7 +20,7 @@ public class Regex {
         if(mt.find()){
             aux=mt.group();
         }else{
-            aux="INVALIDO";
+            aux="NOT FOUND";
         }
         return aux;
     }
